@@ -1,0 +1,16 @@
+<h1> Species </h1>
+
+<p><%= link_to "New", new_species_path %></p>
+
+<p>
+<ul>
+<% @species.each do |species| %>
+<li><%= species.name %></li>
+
+<%= link_to "show", species_path(species) %>
+<%= link_to "edit", edit_species_path(species) %>
+<%= link_to "delete", species_path(species), method: :delete,
+					data: {cinfirm: "are you sure that you want to delete a cute pet???"} %>
+<% end %>
+</ul>
+</p>

@@ -1,0 +1,14 @@
+<%= form_for @species do |p| %>
+<% if @species.errors.any? %>
+    <ul>
+      <% @species.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+       <% end %>
+    </ul> 
+   <% end %>
+		<%= p.label :name %> 
+		<%= p.text_field :name %>
+		
+    <%= p.submit %>
+ 
+<% end %>
