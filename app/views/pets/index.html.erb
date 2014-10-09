@@ -1,7 +1,16 @@
 <h1> Pets </h1>
 
 <p><%= link_to "New", new_pet_path %></p>
+
+<p>
+<ul>
 <% @pets.each do |pet| %>
-<%= pet.name %>
-<%= pet.sold %>
+<li><%= pet.name %></li>
+<li><%= pet.sold %></li>
+<%= link_to "show", pet_path(pet) %>
+<%= link_to "edit", edit_pet_path(pet) %>
+<%= link_to "delete", pet_path(pet), method: :delete,
+					data: {cinfirm: "are you sure that you want to delete a cute pet???"} %>
 <% end %>
+</ul>
+</p>

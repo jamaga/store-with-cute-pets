@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-
+before_filter :set_pet, only: [:edit, :update, :destroy, :show]
 
 
 	def index
@@ -8,6 +8,27 @@ class PetsController < ApplicationController
 
 def new
 	@pet = Pet.new
+end
+
+def show
+	#@pet = Pet.find(params[:id])
+end
+
+def edit
+
+end
+
+def destroy
+  @pet.destroy
+  redirect_to pets_url
+ end
+
+def update
+	if @pet.update(pet_params)
+		redirect_to pets_url
+	else
+		render :edit
+	end
 end
 
 def create
@@ -22,7 +43,11 @@ end
 private
  
   def pet_params
-    params.require(:pet).permit(:name, :sold)
+    params.require(:pet).permit(:name, :sold, :photo)
+  end
+
+  def set_pet
+  	@pet = Pet.find(params[:id])
   end
 
 end

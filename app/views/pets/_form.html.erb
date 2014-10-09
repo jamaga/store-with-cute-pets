@@ -1,0 +1,17 @@
+<%= form_for @pet do |p| %>
+<% if @pet.errors.any? %>
+    <ul>
+      <% @pet.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+       <% end %>
+    </ul> 
+   <% end %>
+		<%= p.label :name %> 
+		<%= p.text_field :name %>
+		
+
+    <%= p.label :photo %>
+    <%= p.file_field :photo %>
+    <%= p.submit %>
+ 
+<% end %>
