@@ -1,0 +1,16 @@
+<h1> new pet </h1>
+
+
+
+<%= form_for @pet do |p| %>
+<% if @pet.errors.any? %>
+    <ul>
+      <% @pet.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+       <% end %>
+    </ul> 
+   <% end %>
+		<%= p.label :name %> 
+		<%= p.text_field :name %>
+		<%= p.submit %>
+<% end %>
