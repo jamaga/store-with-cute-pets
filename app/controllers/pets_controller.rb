@@ -43,7 +43,7 @@ end
 private
  
   def pet_params
-    params.require(:pet).permit(:name, :sold, :photo)
+    params.require(:pet).permit(:name, :sold, :photo, :species_id)
   end
 
   def set_pet

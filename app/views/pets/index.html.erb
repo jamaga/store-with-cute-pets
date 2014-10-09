@@ -7,6 +7,7 @@
 <% @pets.each do |pet| %>
 <li><%= pet.name %></li>
 <li><%= pet.sold %></li>
+<li><%= pet.species.name if pet.species_id %></li> 
 <%= link_to "show", pet_path(pet) %>
 <%= link_to "edit", edit_pet_path(pet) %>
 <%= link_to "delete", pet_path(pet), method: :delete,

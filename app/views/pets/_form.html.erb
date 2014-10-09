@@ -12,6 +12,13 @@
 
     <%= p.label :photo %>
     <%= p.file_field :photo %>
+
+    <%= p.label :species_id %>
+    <%= p.select :species_id,
+  Species.all.collect { |p| [p.name, p.id]}, include_blank: true %>
+
     <%= p.submit %>
  
 <% end %>
+
+
