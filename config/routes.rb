@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
 
-  get 'sessions/new'
 
-  root 'pets#index'
+  root 'welcome#index'
 
   resources :pets
   resources :species
+  resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
