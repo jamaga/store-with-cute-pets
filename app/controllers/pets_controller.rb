@@ -3,8 +3,6 @@ before_filter :set_pet, only: [:edit, :update, :destroy, :show]
 
 
 	def index
-	
-
 		@pets = Pet.all
 	end
 

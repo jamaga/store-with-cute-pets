@@ -1,5 +1,9 @@
 <h1> Pet info </h1>
 
 <%= @pet.name %>
-<%= "Species : #{@pet.species.name}" %>
+<% if @pet.species %>
+<%= "Species : " + (@pet.species ? "#{@pet.species.name}" : "not set") %>
 <%= image_tag @pet.photo %>
+<% end %>
+
+
